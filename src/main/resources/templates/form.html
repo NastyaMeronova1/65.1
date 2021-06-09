@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<header>
+    <title>Welcome</title>
+    <link rel="stylesheet" th:href="@{style.css}" type="text/css"/>
+</header>
+<body>
+<div class="container">
+    <h2><span>Megacom</span>Sign in</h2>
+
+    <div class="color-bg">
+        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{name}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" th:field="*{age}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" th:field="*{email}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</td>
+                </tr>
+                <tr>
+                    <td>Experience:</td>
+                    <td><input type="text" th:field="*{experience}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}">Experience Error</td>
+                </tr>
+                <tr>
+                    <td>IP address:</td>
+                    <td><input type="text" th:field="*{ipAddress}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('ipAddress')}" th:errors="*{ipAddress}">IP address Error</td>
+                </tr>
+                <tr>
+                    <td>Carrier Start:</td>
+                    <td><input type="text" th:field="*{carierStart}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('carierStart')}" th:errors="*{carierStart}">Experience Error</td>
+                </tr>
+                <tr>
+                    <td>End Contract:</td>
+                    <td><input type="text" th:field="*{endContract}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('endContract')}" th:errors="*{endContract}">Experience Error</td>
+                </tr>
+                <tr>
+                    <td>Birthday:</td>
+                    <td><input type="text" th:field="*{birthday}" class="input-bg"/></td>
+                    <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Birthday Error</td>
+                </tr>
+                <tr>
+                    <td>Profession:</td>
+                    <td><select type="text" th:field="*{profession}" class="input-bg">
+                    <option th:each="p:${professionList}" th:value=${p} th:text=${p}/></select></td>
+                </tr>
+                <tr>
+                    <td>isActive:</td>
+                    <td><input type="checkbox" th:field="*{isActive}"/></td>
+                    <td th:if="${#fields.hasErrors('isActive')}" th:errors="*{isActive}">isActive Error</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="button-bg">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
